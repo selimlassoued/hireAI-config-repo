@@ -7,9 +7,9 @@ app:
     realm: ai-recruitment
     client-id: hireAI-backend
     client-secret: ${KC_BACKEND_CLIENT_SECRET}
-
+  
   messaging:
-    exchange: ai-recruitment.exchange
+    exchange: app.events
 
 spring:
   security:
