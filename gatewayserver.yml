@@ -8,6 +8,9 @@ app:
     client-id: hireAI-backend
     client-secret: ${KC_BACKEND_CLIENT_SECRET}
 
+  messaging:
+    exchange: ai-recruitment.exchange
+
 spring:
   security:
     oauth2:
