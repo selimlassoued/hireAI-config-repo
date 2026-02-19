@@ -2,6 +2,11 @@ app:
   messaging:
     exchange: app.events
 spring:
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    username: guest
+    password: guest
   cloud:
     config:
       fail-fast: true
