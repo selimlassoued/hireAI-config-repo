@@ -4,6 +4,7 @@ spring:
     username: notificationuser
     password: notificationpass
     driver-class-name: org.postgresql.Driver
+
   jpa:
     hibernate:
       ddl-auto: update
@@ -19,27 +20,27 @@ spring:
     password: guest
 
   mail:
-    host: ${MAIL_HOST:mailhog}       
-    port: ${MAIL_PORT:1025}
-    username: ${MAIL_USER:}
-    password: ${MAIL_PASSWORD:}
+    host: ${MAIL_HOST}
+    port: ${MAIL_PORT}
+    username: ${MAIL_USER}
+    password: ${MAIL_PASSWORD}
     properties:
       mail:
         smtp:
-          auth: ${MAIL_AUTH:false}
+          auth: ${MAIL_AUTH}
           starttls:
-            enable: ${MAIL_STARTTLS:false}
-            required: ${MAIL_STARTTLS:false}
+            enable: ${MAIL_STARTTLS}
+            required: ${MAIL_STARTTLS}
     default-encoding: UTF-8
     protocol: smtp
 
   application:
-    name: notification-service
+    name: notification-microservice
 
 app:
   messaging:
     exchange: app.events
-    notification-queue: notification.q  
+    notification-queue: notification.q
 
 eureka:
   client:
