@@ -1,1 +1,52 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://notification-db:5432/notificationdb
+    username: notificationuser
+    password: notificationpass
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
 
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    username: guest
+    password: guest
+
+  mail:
+    host: ${MAIL_HOST:mailhog}        # adjust for your real SMTP
+    port: ${MAIL_PORT:1025}
+    username: ${MAIL_USER:}
+    password: ${MAIL_PASSWORD:}
+    properties:
+      mail:
+        smtp:
+          auth: ${MAIL_AUTH:false}
+          starttls:
+            enable: ${MAIL_STARTTLS:false}
+            required: ${MAIL_STARTTLS:false}
+    default-encoding: UTF-8
+    protocol: smtp
+
+  application:
+    name: notification-service
+
+app:
+  messaging:
+    exchange: app.events
+    notification-queue: notification.q   # queue that notification-service listens to
+
+server:
+  port: 8084
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE:http://eureka-server:8761/eureka/}
+  instance:
+    prefer-ip-address: true
