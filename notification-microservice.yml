@@ -19,7 +19,7 @@ spring:
     password: guest
 
   mail:
-    host: ${MAIL_HOST:mailhog}        # adjust for your real SMTP
+    host: ${MAIL_HOST:mailhog}       
     port: ${MAIL_PORT:1025}
     username: ${MAIL_USER:}
     password: ${MAIL_PASSWORD:}
@@ -39,10 +39,7 @@ spring:
 app:
   messaging:
     exchange: app.events
-    notification-queue: notification.q   # queue that notification-service listens to
-
-server:
-  port: 8084
+    notification-queue: notification.q  
 
 eureka:
   client:
