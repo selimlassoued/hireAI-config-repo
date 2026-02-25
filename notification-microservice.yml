@@ -4,6 +4,11 @@ spring:
     username: notificationuser
     password: notificationpass
     driver-class-name: org.postgresql.Driver
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://keycloak:8080/realms/ai-recruitment/protocol/openid-connect/certs
 
   jpa:
     hibernate:
