@@ -38,6 +38,11 @@ spring:
           uri: lb://job-microservice
           predicates:
             - Path=/api/jobs/**
+          
+        - id: notification-microservice
+          uri: lb://notification-microservice
+          predicates:
+            - Path=/api/notifications/**      
 
       server:
         webflux:
