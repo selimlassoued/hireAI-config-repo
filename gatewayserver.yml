@@ -64,6 +64,7 @@ spring:
             allowedHeaders:
               - Authorization
               - Content-Type
+              - X-Actor-User-Id
             allowCredentials: true
 
 management:
