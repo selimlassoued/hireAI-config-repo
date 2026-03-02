@@ -42,7 +42,12 @@ spring:
         - id: notification-microservice
           uri: lb://notification-microservice
           predicates:
-            - Path=/api/notifications/**      
+            - Path=/api/notifications/**  
+            
+        - id: notification-ws
+          uri: lb://notification-microservice
+          predicates:
+            - Path=/ws/notifications/**
 
       server:
         webflux:
