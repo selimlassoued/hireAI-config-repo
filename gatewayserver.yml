@@ -48,6 +48,11 @@ spring:
           uri: lb://notification-microservice
           predicates:
             - Path=/ws/notifications/**
+          
+        - id: audit-service
+          uri: lb://audit-service
+          predicates:
+            - Path=api/audit/**        
 
       server:
         webflux:
