@@ -45,7 +45,7 @@ spring:
             - Path=/api/notifications/**  
             
         - id: notification-ws
-          uri: lb://notification-microservice
+          uri: lb:ws://notification-microservice
           predicates:
             - Path=/ws/notifications/**
           
