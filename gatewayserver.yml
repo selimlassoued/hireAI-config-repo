@@ -52,7 +52,12 @@ spring:
         - id: audit-service
           uri: lb://audit-service
           predicates:
-            - Path=api/audit/**        
+            - Path=api/audit/**  
+            
+        - id: interview-service
+          uri: lb://interview-microservice
+          predicates:
+            - Path=/api/interviews/**
 
       server:
         webflux:
