@@ -55,7 +55,7 @@ spring:
             - Path=api/audit/**  
             
         - id: interview-service
-          uri: lb://interview-microservice
+          uri: lb://interview-service
           predicates:
             - Path=/api/interviews/**
 
