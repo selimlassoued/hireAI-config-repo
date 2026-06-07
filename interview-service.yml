@@ -1,0 +1,36 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://interview-db:5432/interviewdb
+    username: interviewuser
+    password: interviewpass
+    driver-class-name: org.postgresql.Driver
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://keycloak:8080/realms/ai-recruitment/protocol/openid-connect/certs
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    username: guest
+    password: guest
+
+app:
+  messaging:
+    exchange: app.events
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka/
+  instance:
+    prefer-ip-address: true
