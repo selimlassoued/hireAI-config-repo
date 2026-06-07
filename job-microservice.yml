@@ -31,6 +31,12 @@ spring:
       enabled: true
       max-file-size: 10MB
       max-request-size: 10MB
+  
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://keycloak:8080/realms/ai-recruitment/protocol/openid-connect/certs
 
 eureka:
   client:
